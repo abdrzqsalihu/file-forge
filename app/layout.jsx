@@ -3,7 +3,7 @@ import "./globals.css";
 
 const poppins = Poppins({
   subsets: ["latin"],
-  weight: "500", // Specify desired weight
+  weight: "400", // Specify desired weight
   family: "Poppins",
 });
 
