@@ -1,5 +1,5 @@
 import React from "react";
-import { navLinks } from "./utils/ContentConstant";
+import { navLinks } from "../utils/ContentConstant";
 import Link from "next/link";
 import { CloudUpload } from "lucide-react";
 
