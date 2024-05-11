@@ -29,7 +29,7 @@ function FilePreview({ file, removeFile }) {
 
   return (
     <div>
-      <div className="flex flex-wrap items-center justify-between mt-5 border rounded-md p-3 border-blue-100">
+      <div className="flex flex-wrap items-center justify-between mt-5 border rounded-lg p-3 border-blue-100">
         <div className="flex items-center p-2">
           <FileImage width={26} height={26} className="text-primary" />
           <div className="ml-2">
@@ -67,7 +67,7 @@ function FilePreview({ file, removeFile }) {
           />
         </div>
       </div>
-      <div className="flex item-center justify-center mt-8">
+      <div className="flex item-center justify-center mt-10">
         <Button disabled={!selectedType} />
       </div>
     </div>
