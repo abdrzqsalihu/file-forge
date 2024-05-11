@@ -2,6 +2,22 @@ import { CircleX, FileCheck2, FileImage } from "lucide-react";
 import React from "react";
 
 function FilePreview({ file, removeFile }) {
+  const fileExtension = file.name.split(".").pop().toUpperCase();
+
+  // Define a mapping object for file types
+  const fileTypes = {
+    PNG: "PNG",
+    JPG: "JPG",
+    WEBP: "WEBP",
+    JPEG: "JPEG",
+    SVG: "SVG",
+  };
+
+  // Filter out the current file extension
+  const filteredTypes = Object.keys(fileTypes).filter(
+    (type) => type !== fileExtension
+  );
+
   return (
     <div>
       <div className="flex flex-wrap items-center justify-between mt-5 border rounded-md p-3 border-blue-100">
@@ -22,12 +38,16 @@ function FilePreview({ file, removeFile }) {
           <select
             id="type"
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary focus:border-primary p-2"
+            defaultValue={"..."}
           >
-            <option selected>...</option>
-            <option value="PNG">PNG</option>
-            <option value="JPG">JPG</option>
-            <option value="WEBP">WEBP</option>
-            <option value="SVG">SVG</option>
+            <option value="..." disabled hidden>
+              ...
+            </option>
+            {filteredTypes.map((type) => (
+              <option key={type} value={type}>
+                {type}
+              </option>
+            ))}
           </select>
         </div>
         <div className="flex">
