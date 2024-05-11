@@ -32,7 +32,6 @@ body {
   }
 } */
 
-
 /* Toogle Theme Button  */
 
 .switch {
@@ -56,8 +55,8 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #73C0FC;
-  transition: .4s;
+  background-color: #73c0fc;
+  transition: 0.4s;
   border-radius: 30px;
 }
 
@@ -71,7 +70,7 @@ body {
   bottom: 2px;
   z-index: 2;
   background-color: #e8e8e8;
-  transition: .4s;
+  transition: 0.4s;
 }
 
 .sun svg {
@@ -84,7 +83,7 @@ body {
 }
 
 .moon svg {
-  fill: #73C0FC;
+  fill: #73c0fc;
   position: absolute;
   top: 3px;
   left: 5px;
@@ -93,12 +92,12 @@ body {
   height: 24px;
 }
 
-/* .switch:hover */.sun svg {
+/* .switch:hover */
+.sun svg {
   animation: rotate 15s linear infinite;
 }
 
 @keyframes rotate {
- 
   0% {
     transform: rotate(0);
   }
@@ -108,12 +107,12 @@ body {
   }
 }
 
-/* .switch:hover */.moon svg {
+/* .switch:hover */
+.moon svg {
   animation: tilt 5s linear infinite;
 }
 
 @keyframes tilt {
- 
   0% {
     transform: rotate(0deg);
   }
@@ -132,11 +131,11 @@ body {
 }
 
 .input:checked + .slider {
-  background-color: #053363;
+  background-color: #360099;
 }
 
 .input:focus + .slider {
-  box-shadow: 0 0 1px #053363;
+  box-shadow: 0 0 1px #360099;
 }
 
 .input:checked + .slider:before {

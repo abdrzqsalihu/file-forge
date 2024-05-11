@@ -1,8 +1,10 @@
+"use client";
 import { CircleX, FileCheck2, FileImage } from "lucide-react";
-import React from "react";
+import React, { useState } from "react";
 import Button from "./Button";
 
 function FilePreview({ file, removeFile }) {
+  const [selectedType, setSelectedType] = useState(null); // Track selected type
   const fileExtension = file.name.split(".").pop().toUpperCase();
 
   // Define a mapping object for file types
@@ -11,13 +13,19 @@ function FilePreview({ file, removeFile }) {
     JPG: "JPG",
     WEBP: "WEBP",
     JPEG: "JPEG",
-    SVG: "SVG",
+    PDF: "PDF",
+    // SVG: "SVG",
   };
 
   // Filter out the current file extension
   const filteredTypes = Object.keys(fileTypes).filter(
     (type) => type !== fileExtension
   );
+
+  // Function to handle select change
+  const handleSelectChange = (event) => {
+    setSelectedType(event.target.value);
+  };
 
   return (
     <div>
@@ -40,6 +48,7 @@ function FilePreview({ file, removeFile }) {
             id="type"
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary focus:border-primary p-2"
             defaultValue={"..."}
+            onChange={handleSelectChange}
           >
             <option value="..." disabled hidden>
               ...
@@ -59,7 +68,7 @@ function FilePreview({ file, removeFile }) {
         </div>
       </div>
       <div className="flex item-center justify-center mt-8">
-        <Button />
+        <Button disabled={!selectedType} />
       </div>
     </div>
   );
