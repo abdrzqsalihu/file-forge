@@ -1,5 +1,6 @@
 import { CircleX, FileCheck2, FileImage } from "lucide-react";
 import React from "react";
+import Button from "./Button";
 
 function FilePreview({ file, removeFile }) {
   const fileExtension = file.name.split(".").pop().toUpperCase();
@@ -56,6 +57,9 @@ function FilePreview({ file, removeFile }) {
             onClick={() => removeFile()}
           />
         </div>
+      </div>
+      <div className="flex item-center justify-center mt-8">
+        <Button />
       </div>
     </div>
   );
