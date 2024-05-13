@@ -27,7 +27,9 @@ function Button({ disabled, onConvert, convertedFile, status }) {
               : "bg-primary hover:bg-[26006b] hover:opacity-90 cursor-pointer"
           }`}
         >
-          <RefreshCw />{" "}
+          <RefreshCw
+            className={`${status === "In Progress" ? "refresh-icon" : ""}`}
+          />{" "}
           <span className="ml-2">
             {" "}
             {status === "In Progress" ? "Converting..." : "Convert Now"}
