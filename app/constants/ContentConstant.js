@@ -1,15 +1,15 @@
 // Navigiation link
 export const navLinks = [
   {
-    id: "home",
+    id: "/",
     title: "Home",
   },
   {
-    id: "about",
+    id: "#about",
     title: "About",
   },
   {
-    id: "pricing",
+    id: "#pricing",
     title: "Pricing",
   },
 ];

@@ -1,5 +1,5 @@
 import React from "react";
-import { navLinks } from "../utils/ContentConstant";
+import { navLinks } from "../constants/ContentConstant";
 import Link from "next/link";
 import { CloudUpload } from "lucide-react";
 
@@ -10,7 +10,7 @@ function Header() {
         <div className="mx-auto max-w-screen-xl px-6 sm:px-6 lg:px-8">
           <div className="flex h-16 items-center justify-between">
             <div className="md:flex md:items-center md:gap-12">
-              <a className="block text-teal-600" href="#">
+              <a className="block text-teal-600" href="/">
                 <span className="sr-only">Home</span>
                 <svg
                   id="logo-82"
@@ -38,7 +38,7 @@ function Header() {
                     <li key={links.id}>
                       <Link
                         className={`text-secondary transition hover:text-primary hover:font-semibold text-[0.9rem]`}
-                        href={`#${links.id}`}
+                        href={`${links.id}`}
                       >
                         {links.title}
                       </Link>

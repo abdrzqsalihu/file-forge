@@ -3,7 +3,6 @@
 import { CloudUpload } from "lucide-react";
 import React, { useState } from "react";
 import FilePreview from "./FilePreview";
-
 function UploadFile() {
   const [file, setFile] = useState();
 
@@ -13,11 +12,10 @@ function UploadFile() {
       // console.log("Size is greater than 3MB");
       setFile(selectedFile);
     } else {
-      // setFile(selectedFile);
+      setFile(null);
       // setErrorMsg(null);
     }
   };
-
   const removeFile = () => {
     setFile(null);
     // Clear the input field value to allow selecting a new file
