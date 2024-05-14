@@ -2,14 +2,12 @@ import { CircleX, FileCheck2, FileImage } from "lucide-react";
 import React, { useState } from "react";
 import Button from "./Button";
 import {
-  convertPDFToImage,
-  convertToImage,
-  //   convertToImage,
   convertToJPEG,
   convertToJPG,
   convertToPDF,
   convertToPNG,
   convertToWEBP,
+  convertWordToPDF,
 } from "@/app/utils/convertFile";
 
 function FilePreview({ file, removeFile }) {
@@ -28,8 +26,12 @@ function FilePreview({ file, removeFile }) {
     WEBP: "WEBP",
     JPEG: "JPEG",
     PDF: "PDF",
+    // MP3: "MP3",
     // SVG: "SVG",
   };
+
+  // Define an array of accepted file extensions
+  const acceptedFormats = ["PNG", "JPG", "WEBP", "JPEG", "PDF", "SVG"];
 
   // Filter out the current file extension
   const filteredTypes = Object.keys(fileTypes).filter(
@@ -61,7 +63,7 @@ function FilePreview({ file, removeFile }) {
       });
     }, 1000);
 
-    setTimeout(() => {
+    setTimeout(async () => {
       if (selectedType === "JPG") {
         convertToJPG(file, setConvertedFile);
       } else if (selectedType === "PNG") {
@@ -72,6 +74,8 @@ function FilePreview({ file, removeFile }) {
         convertToPDF(file, setConvertedFile);
       } else if (selectedType === "WEBP") {
         convertToWEBP(file, setConvertedFile);
+      } else if (selectedType === "PD") {
+        convertWordToPDF(file, setConvertedFile);
       }
       // Set status to "Done"
       setStatus("Done");
@@ -107,11 +111,15 @@ function FilePreview({ file, removeFile }) {
                 <option value="..." disabled hidden>
                   ...
                 </option>
-                {filteredTypes.map((type) => (
-                  <option key={type} value={type}>
-                    {type}
-                  </option>
-                ))}
+                {acceptedFormats.includes(fileExtension) && (
+                  <>
+                    {filteredTypes.map((type) => (
+                      <option key={type} value={type}>
+                        {type}
+                      </option>
+                    ))}
+                  </>
+                )}
               </select>
             </>
           )}
