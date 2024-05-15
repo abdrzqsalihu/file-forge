@@ -11,9 +11,12 @@ function Hero() {
             </h1>
 
             <p className="mt-7 text-[1rem] md:text-[1.2rem] text-secondary">
-              Convert any file to the format you need, We support nearly all
-              audio, video, image, and document formats. we've got you covered.
-              Simply upload your files and let us do the rest.
+              Convert any image file to the format you need, We support nearly
+              all
+              {/* audio, video, */} image
+              {/* and document  */} formats.
+              {/* we've got you covered. */} Simply upload your files and let us
+              do the rest.
             </p>
           </div>
         </div>
