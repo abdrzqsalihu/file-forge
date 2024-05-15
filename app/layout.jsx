@@ -13,6 +13,9 @@ export const metadata = {
   title: "File Forge",
   description:
     "Experience seamless file conversion with convenience and reliability.",
+  icons: {
+    icon: "/favicon.png",
+  },
 };
 
 export default function RootLayout({ children }) {
