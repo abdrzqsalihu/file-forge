@@ -113,11 +113,14 @@ function FilePreview({ file, removeFile }) {
                 </option>
                 {acceptedFormats.includes(fileExtension) && (
                   <>
-                    {filteredTypes.map((type) => (
-                      <option key={type} value={type}>
-                        {type}
-                      </option>
-                    ))}
+                    {filteredTypes.map(
+                      (type) =>
+                        fileExtension.toLowerCase() !== "pdf" && (
+                          <option key={type} value={type}>
+                            {type}
+                          </option>
+                        )
+                    )}
                   </>
                 )}
               </select>
