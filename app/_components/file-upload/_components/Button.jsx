@@ -1,5 +1,5 @@
 import React from "react";
-import { RefreshCw, Download } from "lucide-react";
+import { RefreshCw, Download, ChevronsLeft } from "lucide-react";
 
 function Button({ disabled, onConvert, convertedFile, status }) {
   const handleConvert = () => {
@@ -16,7 +16,7 @@ function Button({ disabled, onConvert, convertedFile, status }) {
   };
 
   return (
-    <div>
+    <div className="flex flex-col items-center">
       {!convertedFile && (
         <button
           disabled={disabled || status === "In Progress"}
@@ -37,13 +37,22 @@ function Button({ disabled, onConvert, convertedFile, status }) {
         </button>
       )}
       {convertedFile && (
-        <button
-          onClick={handleDownload}
-          className="flex items-center justify-between p-3 rounded-xl bg-primary hover:bg-[26006b] hover:opacity-90 text-white cursor-pointer"
-        >
-          <Download />
-          <span className="ml-2">Download</span>
-        </button>
+        <>
+          <button
+            onClick={handleDownload}
+            className="flex items-center justify-between p-3 rounded-xl bg-primary hover:bg-[26006b] hover:opacity-90 text-white cursor-pointer"
+          >
+            <Download />
+            <span className="ml-2">Download</span>
+          </button>
+
+          <a href="/"
+            className="flex items-center justify-between p-3 rounded-xl bg-secondary hover:bg-[26006b] hover:opacity-90 text-white cursor-pointer mt-14 block lg:hidden"
+          >
+            <ChevronsLeft />
+            <span className="ml-2">Back to Upload </span>
+          </a>
+        </>
       )}
     </div>
   );

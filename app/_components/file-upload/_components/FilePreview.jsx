@@ -49,7 +49,7 @@ function FilePreview({ file, removeFile }) {
     setStatus("In Progress");
 
     // Calculate increment based on 4 seconds
-    const increment = 100 / 3; // Progress percentage per second
+    const increment = 100 / 3.1; // Progress percentage per second
 
     // Update progress every second
     const interval = setInterval(() => {
@@ -79,15 +79,15 @@ function FilePreview({ file, removeFile }) {
       }
       // Set status to "Done"
       setStatus("Done");
-    }, 5000); // 6 seconds delay
+    }, 4000); // 6 seconds delay
   };
 
   return (
     <div>
       <div className="flex flex-wrap items-center justify-between mt-5 border rounded-lg p-3 border-blue-100">
-        <div className="flex flex-wra items-center p-2">
+        <div className="flex items-center p-2">
           <FileImage width={26} height={26} className="text-primary dark:text-gray-400" />
-          <div className="ml-2">
+          <div className="ml-2 flex flex-wrap">
             <h2 className="text-secondary dark:text-gray-100 font-medium">
               {file.name}
               <span className="font-normal ml-2">
