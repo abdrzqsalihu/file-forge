@@ -47,7 +47,7 @@ function Button({ disabled, onConvert, convertedFile, status }) {
           </button>
 
           <a href="/"
-            className="flex items-center justify-between p-3 rounded-xl bg-secondary hover:bg-[26006b] hover:opacity-90 text-white cursor-pointer mt-14 block lg:hidden"
+            className="justify-between p-3 rounded-xl bg-secondary hover:bg-[26006b] hover:opacity-90 text-white cursor-pointer mt-14 hidden"
           >
             <ChevronsLeft />
             <span className="ml-2">Back to Upload </span>
