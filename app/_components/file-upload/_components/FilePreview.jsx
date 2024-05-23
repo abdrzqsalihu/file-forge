@@ -79,16 +79,16 @@ function FilePreview({ file, removeFile }) {
       }
       // Set status to "Done"
       setStatus("Done");
-    }, 4000); // 6 seconds delay
+    }, 5000); // 6 seconds delay
   };
 
   return (
     <div>
       <div className="flex flex-wrap items-center justify-between mt-5 border rounded-lg p-3 border-blue-100">
-        <div className="flex items-center p-2">
-          <FileImage width={26} height={26} className="text-primary" />
+        <div className="flex flex-wra items-center p-2">
+          <FileImage width={26} height={26} className="text-primary dark:text-gray-400" />
           <div className="ml-2">
-            <h2 className="text-secondary font-medium">
+            <h2 className="text-secondary dark:text-gray-100 font-medium">
               {file.name}
               <span className="font-normal ml-2">
                 ({(file.size / 1024 / 1024).toFixed(2)}MB )
@@ -100,7 +100,7 @@ function FilePreview({ file, removeFile }) {
         <div className="flex items-center">
           {!status && (
             <>
-              <h2 className="text-secondary font-normal mr-3">Convert to</h2>
+              <h2 className="text-secondary dark:text-gray-400 font-normal mr-3">Convert to</h2>
               <select
                 id="type"
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary focus:border-primary p-2"
@@ -129,7 +129,7 @@ function FilePreview({ file, removeFile }) {
           {status && (
             <p className="font-normal">
               Status:{" "}
-              <span className="font-medium text-secondary">
+              <span className="font-medium text-secondary dark:text-gray-400">
                 {status === "In Progress" ? "In Progress" : ""}
               </span>{" "}
               <span className="font-medium text-green-500">

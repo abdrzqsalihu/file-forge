@@ -1,5 +1,6 @@
 import { Rubik } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "next-themes";
 
 // const poppins = Poppins({
 //   subsets: ["latin"],
@@ -20,8 +21,19 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={rubik.className}>{children}</body>
+    <html lang="en" suppressHydrationWarning={true}>
+      {/* <ThemeProvider attribute="class"> */}
+
+      <body className={rubik.className}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="light"
+          // enableSystem
+          // disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
 }

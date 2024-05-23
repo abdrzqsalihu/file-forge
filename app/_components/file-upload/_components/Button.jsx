@@ -21,9 +21,9 @@ function Button({ disabled, onConvert, convertedFile, status }) {
         <button
           disabled={disabled || status === "In Progress"}
           onClick={handleConvert}
-          className={`p-3 rounded-xl flex item-center justify-between text-white ${
+          className={`p-3 rounded-xl flex item-center justify-between text-white dark:text-gray-100 ${
             disabled || status === "In Progress"
-              ? "bg-gray-300 cursor-not-allowed"
+              ? "bg-gray-300 dark:bg-gray-400 cursor-not-allowed"
               : "bg-primary hover:bg-[26006b] hover:opacity-90 cursor-pointer"
           }`}
         >
