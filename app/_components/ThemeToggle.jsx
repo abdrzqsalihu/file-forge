@@ -50,14 +50,14 @@ const ThemeToggle = () => {
         >
           <div className="py-1" role="none">
             <button
-              className="block px-4 py-2 text-sm text-gray-700 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 w-full text-left"
+              className="block px-4 py-2 text-sm text-gray-700 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 w-full text-left"
               role="menuitem"
               onClick={() => handleThemeChange("light")}
             >
               Light
             </button>
             <button
-              className="block px-4 py-2 text-sm text-gray-700 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 w-full text-left"
+              className="block px-4 py-2 text-sm text-gray-700 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 w-full text-left"
               role="menuitem"
               onClick={() => handleThemeChange("dark")}
             >

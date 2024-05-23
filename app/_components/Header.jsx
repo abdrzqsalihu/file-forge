@@ -2,7 +2,8 @@ import React from "react";
 import { navLinks } from "../constants/ContentConstant";
 import Link from "next/link";
 import { CloudUpload } from "lucide-react";
-import ThemeToggle from "./themeToggle";
+import ThemeToggle from "./ThemeToggle";
+// import ThemeToggle from "./themeToggle";
 
 function Header() {
   return (
@@ -80,7 +81,7 @@ function Header() {
                   </svg>
                 </button> */}
 
-                <ThemeToggle/>
+                <ThemeToggle />
               </div>
             </div>
           </div>
