@@ -64,6 +64,19 @@ function Footer() {
               runs entirely in your browser
             </p>
           </div>
+
+          <p className="mt-6 text-center text-xs text-white/35 font-mono">
+            Built with <span role="img" aria-label="love">❤️</span> by{" "}
+            <a
+              href="https://abdrzaqsalihu.space/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative text-white/55 hover:text-white transition-colors py-0.5
+                after:absolute after:left-0 after:-bottom-0.5 after:h-[1px] after:w-0 after:bg-spark after:transition-all after:duration-300 after:ease-out hover:after:w-full"
+            >
+              Abdulrazaq Salihu
+            </a>
+          </p>
         </div>
       </div>
     </footer>
