@@ -5,7 +5,9 @@ import { flushSync } from "react-dom";
 import { Sun, Moon } from "lucide-react";
 
 const ThemeToggle = () => {
-  const { theme, setTheme } = useTheme();
+  // resolvedTheme is the actual light/dark in effect — `theme` can be
+  // "system", which would otherwise read as "not dark" on a dark device.
+  const { resolvedTheme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
   const buttonRef = useRef(null);
 
@@ -15,7 +17,7 @@ const ThemeToggle = () => {
 
   if (!mounted) return <div className="w-9 h-9" />;
 
-  const isDark = theme === "dark";
+  const isDark = resolvedTheme === "dark";
 
   const toggleTheme = (event) => {
     const next = isDark ? "light" : "dark";

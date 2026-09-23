@@ -62,11 +62,43 @@ export const ACCEPTED_SOURCE_MIME = [
 //                          in convertFile.js); Firefox/Safari silently hand back
 //                          a mislabeled PNG instead of throwing, so we check first
 export const SUPPORTED_FORMATS = [
-  { id: "png", label: "PNG", ext: "png", mime: "image/png", category: "Raster" },
-  { id: "jpg", label: "JPG", ext: "jpg", mime: "image/jpeg", category: "Raster", quality: true },
-  { id: "webp", label: "WEBP", ext: "webp", mime: "image/webp", category: "Raster", quality: true },
-  { id: "gif", label: "GIF", ext: "gif", mime: "image/gif", category: "Raster" },
-  { id: "bmp", label: "BMP", ext: "bmp", mime: "image/bmp", category: "Raster" },
+  {
+    id: "png",
+    label: "PNG",
+    ext: "png",
+    mime: "image/png",
+    category: "Raster",
+  },
+  {
+    id: "jpg",
+    label: "JPG",
+    ext: "jpg",
+    mime: "image/jpeg",
+    category: "Raster",
+    quality: true,
+  },
+  {
+    id: "webp",
+    label: "WEBP",
+    ext: "webp",
+    mime: "image/webp",
+    category: "Raster",
+    quality: true,
+  },
+  {
+    id: "gif",
+    label: "GIF",
+    ext: "gif",
+    mime: "image/gif",
+    category: "Raster",
+  },
+  {
+    id: "bmp",
+    label: "BMP",
+    ext: "bmp",
+    mime: "image/bmp",
+    category: "Raster",
+  },
   {
     id: "avif",
     label: "AVIF",
@@ -75,8 +107,20 @@ export const SUPPORTED_FORMATS = [
     category: "Modern",
     requiresRuntimeCheck: true,
   },
-  { id: "ico", label: "ICO", ext: "ico", mime: "image/x-icon", category: "Other" },
-  { id: "pdf", label: "PDF", ext: "pdf", mime: "application/pdf", category: "Other" },
+  {
+    id: "ico",
+    label: "ICO",
+    ext: "ico",
+    mime: "image/x-icon",
+    category: "Other",
+  },
+  {
+    id: "pdf",
+    label: "PDF",
+    ext: "pdf",
+    mime: "application/pdf",
+    category: "Other",
+  },
 ];
 
 export const FORMAT_CATEGORY_ORDER = ["Raster", "Modern", "Other"];
@@ -90,7 +134,7 @@ export const benefits = [
   {
     title: "No format guesswork",
     description:
-      "Pick a target format from the options that actually make sense for your file — nothing else to configure.",
+      "Pick a target format from the options that actually make sense for your file, nothing else to configure.",
   },
   {
     title: "Straight to download",

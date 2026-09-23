@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${rubik.className} ${rubik.variable} ${jetbrainsMono.variable} bg-white text-secondary dark:bg-ink dark:text-gray-100 transition-colors`}
       >
-        <ThemeProvider attribute="class" defaultTheme="light">
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <div className="grain" aria-hidden="true" />
           {children}
         </ThemeProvider>

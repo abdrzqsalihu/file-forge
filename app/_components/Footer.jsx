@@ -41,7 +41,7 @@ function Footer() {
               <span className="text-sm font-medium">File Forge</span>
             </a>
 
-            <nav aria-label="Footer">
+            {/* <nav aria-label="Footer">
               <ul className="flex items-center gap-6 text-sm">
                 {navLinks.map((link) => (
                   <li key={link.id}>
@@ -55,7 +55,7 @@ function Footer() {
                   </li>
                 ))}
               </ul>
-            </nav>
+            </nav> */}
 
             <p className="text-xs text-white/40 font-mono text-center md:text-right">
               © {new Date().getFullYear()} File Forge
@@ -66,7 +66,11 @@ function Footer() {
           </div>
 
           <p className="mt-6 text-center text-xs text-white/35 font-mono">
-            Built with <span role="img" aria-label="love">❤️</span> by{" "}
+            Built with{" "}
+            <span role="img" aria-label="love">
+              ❤️
+            </span>{" "}
+            by{" "}
             <a
               href="https://abdrzaqsalihu.space/"
               target="_blank"

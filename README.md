@@ -66,7 +66,7 @@ Files are read and converted in browser memory. Nothing in this repository uploa
 
 - [Next.js 14](https://nextjs.org/) (App Router) and React 18
 - [Tailwind CSS 3](https://tailwindcss.com/) for styling
-- [next-themes](https://github.com/pacocoursey/next-themes) for light/dark mode (class strategy, default light)
+- [next-themes](https://github.com/pacocoursey/next-themes) for light/dark mode (class strategy; follows the system preference until the user picks a theme, then remembers that choice)
 - [lucide-react](https://lucide.dev/) for icons
 - Fonts via `next/font`: Rubik and JetBrains Mono
 - Conversion libraries: `jspdf`, `gifenc`, `heic2any`, `utif`
