@@ -2,155 +2,106 @@
 @tailwind components;
 @tailwind utilities;
 
-/* :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+html {
+  scroll-behavior: smooth;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+@keyframes flow {
+  to {
+    stroke-dashoffset: -9;
   }
-} */
-
-/* Toogle Theme Button  */
-
-.switch {
-  font-size: 12px;
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 30px;
 }
 
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #73c0fc;
-  transition: 0.4s;
-  border-radius: 30px;
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 25px;
-  width: 25px;
-  border-radius: 20px;
-  left: 3px;
-  bottom: 2px;
-  z-index: 2;
-  background-color: #e8e8e8;
-  transition: 0.4s;
-}
-
-.sun svg {
-  position: absolute;
-  top: 3px;
-  left: 35px;
-  z-index: 1;
-  width: 24px;
-  height: 24px;
-}
-
-.moon svg {
-  fill: #73c0fc;
-  position: absolute;
-  top: 3px;
-  left: 5px;
-  z-index: 1;
-  width: 24px;
-  height: 24px;
-}
-
-/* .switch:hover */
-.sun svg {
-  animation: rotate 15s linear infinite;
-}
-
-@keyframes rotate {
+@keyframes pop {
   0% {
-    transform: rotate(0);
+    opacity: 0;
+    transform: scale(0.92);
   }
-
+  60% {
+    transform: scale(1.03);
+  }
   100% {
-    transform: rotate(360deg);
+    opacity: 1;
+    transform: scale(1);
   }
 }
 
-/* .switch:hover */
-.moon svg {
-  animation: tilt 5s linear infinite;
-}
-
-@keyframes tilt {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  25% {
-    transform: rotate(-10deg);
-  }
-
-  75% {
-    transform: rotate(10deg);
-  }
-
+@keyframes float {
+  0%,
   100% {
-    transform: rotate(0deg);
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
   }
 }
 
-.input:checked + .slider {
+::selection {
   background-color: #360099;
+  color: #ffffff;
 }
 
-.input:focus + .slider {
-  box-shadow: 0 0 1px #360099;
+:focus-visible {
+  outline: 2px solid #360099;
+  outline-offset: 2px;
 }
 
-.input:checked + .slider:before {
-  transform: translateX(30px);
+.dark :focus-visible {
+  outline-color: #ff7a45;
 }
 
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+/* Theme toggle: replace the browser's default cross-fade with a plain cut,
+   so the only visible motion is the clip-path circle grown from the toggle
+   in ThemeToggle.jsx. */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
 }
 
-.refresh-icon {
-  animation: spin 1s linear infinite; /* Adjust animation duration as needed */
+/* Fine, static grain — reads as material rather than a flat gradient. */
+.grain {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.035;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgba(54, 0, 153, 0.25);
+  border-radius: 999px;
+  border: 2px solid transparent;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 122, 69, 0.25);
+}
+html {
+  scrollbar-color: rgba(54, 0, 153, 0.25) transparent;
+}
+.dark html {
+  scrollbar-color: rgba(255, 122, 69, 0.25) transparent;
 }
