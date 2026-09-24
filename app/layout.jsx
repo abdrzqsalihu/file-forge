@@ -1,19 +1,17 @@
-import { Rubik } from "next/font/google";
+import { Rubik, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
 
-// const poppins = Poppins({
-//   subsets: ["latin"],
-//   weight: "400", // Specify desired weight
-//   family: "Poppins",
-// });
-
-const rubik = Rubik({ subsets: ["latin"] });
+const rubik = Rubik({ subsets: ["latin"], variable: "--font-sans" });
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+});
 
 export const metadata = {
   title: "File Forge",
   description:
-    "Experience seamless file conversion with convenience and reliability.",
+    "Turn any image into exactly the format you need. Fast, private, browser-based conversion — nothing ever leaves your device.",
   icons: {
     icon: "/favicon.png",
   },
@@ -22,15 +20,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning={true}>
-      {/* <ThemeProvider attribute="class"> */}
-
-      <body className={rubik.className}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="light"
-          // enableSystem
-          // disableTransitionOnChange
-        >
+      <body
+        className={`${rubik.className} ${rubik.variable} ${jetbrainsMono.variable} bg-white text-secondary dark:bg-ink dark:text-gray-100 transition-colors`}
+      >
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <div className="grain" aria-hidden="true" />
           {children}
         </ThemeProvider>
       </body>
