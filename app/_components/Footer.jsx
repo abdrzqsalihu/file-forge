@@ -66,13 +66,14 @@ function Footer() {
           </div>
 
           <p className="mt-6 text-center text-xs text-white/35 font-mono">
-            Built with{" "}
-            <span role="img" aria-label="love">
+            Built
+            {/* with */}{" "}
+            {/* <span role="img" aria-label="love">
               ❤️
-            </span>{" "}
+            </span>{" "} */}
             by{" "}
             <a
-              href="https://abdrzaqsalihu.space/"
+              href="https://abdrzqsalihu.space/"
               target="_blank"
               rel="noopener noreferrer"
               className="relative text-white/55 hover:text-white transition-colors py-0.5

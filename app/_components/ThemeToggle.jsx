@@ -61,7 +61,7 @@ const ThemeToggle = () => {
           ],
         },
         {
-          duration: 600,
+          duration: 1100,
           easing: "cubic-bezier(0.65, 0, 0.35, 1)",
           pseudoElement: "::view-transition-new(root)",
         }
