@@ -8,12 +8,38 @@ const jetbrainsMono = JetBrains_Mono({
   variable: "--font-mono",
 });
 
+const siteUrl = "https://file-forge.vercel.app";
+const title = "File Forge";
+const description =
+  "Turn any image into exactly the format you need. Fast, private, browser-based conversion — nothing ever leaves your device.";
+
 export const metadata = {
-  title: "File Forge",
-  description:
-    "Turn any image into exactly the format you need. Fast, private, browser-based conversion — nothing ever leaves your device.",
+  metadataBase: new URL(siteUrl),
+  title,
+  description,
   icons: {
     icon: "/favicon.png",
+  },
+  openGraph: {
+    title,
+    description,
+    url: siteUrl,
+    siteName: title,
+    type: "website",
+    images: [
+      {
+        url: "/social/file-forge-share.png",
+        width: 1200,
+        height: 630,
+        alt: title,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+    images: ["/social/file-forge-share.png"],
   },
 };
 
