@@ -11,7 +11,7 @@ const jetbrainsMono = JetBrains_Mono({
 const siteUrl = "https://file-forge.vercel.app";
 const title = "File Forge";
 const description =
-  "Turn any image into exactly the format you need. Fast, private, browser-based conversion — nothing ever leaves your device.";
+  "Turn any image into exactly the format you need. Fast, private, browser-based conversion, nothing ever leaves your device.";
 
 export const metadata = {
   metadataBase: new URL(siteUrl),
@@ -48,7 +48,7 @@ export default function RootLayout({ children }) {
     <html lang="en" suppressHydrationWarning={true}>
       <body
         className={`${rubik.className} ${rubik.variable} ${jetbrainsMono.variable} bg-white text-secondary dark:bg-ink dark:text-gray-100 transition-colors`}
-      >
+      > 
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <div className="grain" aria-hidden="true" />
           {children}
